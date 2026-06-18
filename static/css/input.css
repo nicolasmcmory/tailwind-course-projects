@@ -3,3 +3,8 @@
 @utility btn {
   @apply text-slate-600 font-bold tracking-wide font-sans text-center rounded-md py-2 px-4 border border-slate-600;
 }
+
+@theme {
+  --color-dark: var(--color-slate-950);
+  --color-medium-dark: var(--color-slate-400);
+}
