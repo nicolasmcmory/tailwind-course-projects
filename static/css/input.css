@@ -1,17 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Bai Jamjuree", sans-serif;
+  --font-sans: "Josefin Sans", sans-serif;
+  --font-alata: "Alata";
+  --color-dark: var(--color-gray-800);
+  --color-light: var(--color-gray-500);
 }
-
-/* body {
-  background-image: url("../../website-projects/clipboard/images/bg-header-mobile.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@media (min-width: 768px) {
-  body {
-    background-image: url("../../website-projects/clipboard/images/bg-header-desktop.png");
-  }
-} */
