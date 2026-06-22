@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Mulish", sans-serif;
-  --font-mono: "Rokkitt", monospace;
+  --font-sans: "Bai Jamjuree", sans-serif;
 }
+
+/* body {
+  background-image: url("../../website-projects/clipboard/images/bg-header-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("../../website-projects/clipboard/images/bg-header-desktop.png");
+  }
+} */
