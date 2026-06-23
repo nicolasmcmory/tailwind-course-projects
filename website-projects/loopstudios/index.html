@@ -2,63 +2,83 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/alpine.js"
+      defer></script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
       rel="stylesheet" />
-    <script src="js/script.js" defer></script>
-    <link rel="stylesheet" href="../../static/css/tailwind.out.css" />
+    <link
+      rel="stylesheet"
+      href="../../static/css/tailwind.out.css" />
+    <script
+      src="../../static/js/main.js"
+      defer></script>
     <title>Simple Tailwind Starter</title>
   </head>
   <body>
     <!-- Header -->
-    <div class="flex flex-col justify-center items-center gap-8 w-screen">
+    <div
+      class="relative flex flex-col justify-center items-center gap-8 w-screen">
       <header
-        class="relative flex flex-col justify-start items-center bg-[url('../../website-projects/loopstudios/images/mobile/image-hero.jpg')] md:bg-[url('../../website-projects/loopstudios/images/desktop/image-hero.jpg')] bg-no-repeat px-16 pt-16 w-full h-[700px] text-white text-center">
-        <!-- POI:Hamburger menu -->
-        <!-- <div
-          class="md:hidden top-0 left-0 absolute flex flex-col justify-start items-baseline gap-4 bg-black pt-30 pl-16 w-full h-full font-semibold text-lg">
-          <div class="group h-10">
-            <a href="#">About</a>
-            <div
-              class="mx-3 group-hover:border-white group-hover:border-b"></div>
-          </div>
-          <div class="group h-10">
-            <a href="#">Careers</a>
-            <div
-              class="mx-3 group-hover:border-white group-hover:border-b"></div>
-          </div>
-          <div class="group h-10">
-            <a href="#">Events</a>
-            <div
-              class="mx-3 group-hover:border-white group-hover:border-b"></div>
-          </div>
-          <div class="group h-10">
-            <a href="#">Products</a>
-            <div
-              class="mx-3 group-hover:border-white group-hover:border-b"></div>
-          </div>
-        </div> -->
-
-        <!-- Full nav -->
+        class="flex flex-col justify-start items-center bg-[url('../../website-projects/loopstudios/images/mobile/image-hero.jpg')] md:bg-[url('../../website-projects/loopstudios/images/desktop/image-hero.jpg')] bg-cover bg-no-repeat mb-24 px-16 pt-16 w-full h-[600px] text-white text-center">
+        <!-- POI:Nav -->
         <nav class="flex justify-between items-center gap-8 w-full">
-          <img src="./images/logo.svg" alt="logo" />
+          <img
+            src="./images/logo.svg"
+            alt="logo" />
 
-          <!-- Hamburger button -->
+          <!-- POI:Nav-Mobile menu-button -->
           <button
             id="hamburgerBtn"
-            class="md:hidden z-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none w-8 h-8"
+            class="md:hidden z-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none w-8 h-8 transition- duration-300 cursor-pointer transition: all 0.25s ease;all"
             aria-label="Open menu">
             <!-- three bars -->
-            <span class="block bg-white w-6 h-0.5"></span>
-            <span class="block bg-white w-6 h-0.5"></span>
-            <span class="block bg-white w-6 h-0.5"></span>
+            <div class="h-top bg-white w-6 h-0.5"></div>
+            <div class="bg-white w-6 h-0.5 h-middle"></div>
+            <div class="h-bottom bg-white w-6 h-0.5"></div>
           </button>
 
-          <!-- Nav options -->
+          <!-- POI:Nav-Mobile menu-options -->
+          <div
+            data-mobile-nav=""
+            class="md:hidden top-0 left-0 absolute flex flex-col justify-start items-baseline gap-4 bg-black opacity-0 pt-30 pl-16 w-full h-full font-semibold text-lg">
+            <div class="group h-10">
+              <a href="#">About</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+            <div class="group h-10">
+              <a href="#">Careers</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+            <div class="group h-10">
+              <a href="#">Events</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+            <div class="group h-10">
+              <a href="#">Products</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+          </div>
+
+          <!-- POI:Nav-Desktop options -->
           <div class="hidden md:flex gap-6 font-alata font-semibold text-lg">
             <div class="group h-10">
               <a href="#">About</a>
@@ -82,21 +102,21 @@
             </div>
           </div>
         </nav>
-        <h3
+        <h1
           class="mt-30 md:mr-72 p-8 border-2 border-white min-w-72 md:max-w-2/3 font-thin text-4xl text-left uppercase">
           Impressive Experiences That Deliver
-        </h3>
+        </h1>
       </header>
-      <!-- Feature section -->
-      <div
-        class="md:relative flex md:flex-row flex-col justify-center md:justify-between items-center gap-8 m-4 mx-8 mt-24 px-4 w-full text-center">
+      <!-- POI:Features -->
+      <section
+        class="relative flex md:flex-row flex-col justify-center md:justify-between items-center gap-8 px-16 w-full text-center">
         <img
           src="./images/mobile/image-interactive.jpg"
           alt="night arcade"
           class="md:w-2/3 object-contain" />
         <div
-          class="md:right-0 md:bottom-0 md:absolute md:bg-white p-8 md:w-108">
-          <h2 class="text-4xl uppercase">The leader in interactive VR</h2>
+          class="md:right-8 md:bottom-0 md:absolute md:bg-white p-8 md:w-108">
+          <h2>The leader in interactive VR</h2>
           <p class="mt-8 font-light text-black">
             Founded in 2011, Loopstudios has been producing world-class virtual
             reality projects for some of the best companies around the globe.
@@ -104,7 +124,138 @@
             digital experiences that bind to their brand.
           </p>
         </div>
-      </div>
+      </section>
+
+      <!-- POI:Our creations -->
+      <section
+        class="flex flex-col justify-center items-center gap-8 mb-24 p-16 w-full text-center">
+        <div
+          class="flex md:flex-row flex-col justify-center md:justify-between items-center gap-4 p-4 w-full">
+          <h2>Our Creations</h2>
+          <button
+            class="hidden md:flex bg-black hover:bg-white px-12 py-4 border border-black rounded-2xl font-alata text-white hover:text-black text-lg text-center">
+            See All
+          </button>
+        </div>
+        <!-- POI:Our creations-Product grid -->
+        <div
+          class="gap-4 grid grid-cols-1 md:grid-cols-4 grid- w-full text-white">
+          <!-- POI:Our creations-Product grid-Product -->
+          <div class="group relative overflow-clip">
+            <!-- Product-image mobile-->
+            <img
+              src="./images/mobile/image-curiosity.jpg"
+              alt=""
+              class="product-img-mobile" />
+            <!-- Product-image desktop-->
+            <img
+              src="./images/desktop/image-curiosity.jpg"
+              alt=""
+              class="product-img-desktop" />
+            <!-- Product-gradient -->
+            <div class="product-gradient"></div>
+            <!-- Product-text-->
+            <h3 class="product-text">Curiosity</h3>
+          </div>
+          <!-- POI:Our creations-Product grid-Product -->
+          <div class="group relative overflow-clip">
+            <!-- Product-image mobile-->
+            <img
+              src="./images/mobile/image-deep-earth.jpg"
+              alt=""
+              class="product-img-mobile" />
+            <!-- Product-image desktop-->
+            <img
+              src="./images/desktop/image-deep-earth.jpg"
+              alt=""
+              class="product-img-desktop" />
+            <!-- Product-gradient -->
+            <div class="product-gradient"></div>
+            <!-- Product-text-->
+            <h3 class="product-text">Curiosity</h3>
+          </div>
+          <!-- POI:Our creations-Product grid-Product -->
+          <div class="group relative overflow-clip">
+            <!-- Product-image mobile-->
+            <img
+              src="./images/mobile/image-fisheye.jpg"
+              alt=""
+              class="product-img-mobile" />
+            <!-- Product-image desktop-->
+            <img
+              src="./images/desktop/image-fisheye.jpg"
+              alt=""
+              class="product-img-desktop" />
+            <!-- Product-gradient -->
+            <div class="product-gradient"></div>
+            <!-- Product-text-->
+            <h3 class="product-text">Curiosity</h3>
+          </div>
+          <!-- POI:Our creations-Product grid-Product -->
+          <div class="group relative overflow-clip">
+            <!-- Product-image mobile-->
+            <img
+              src="./images/mobile/image-from-above.jpg"
+              alt=""
+              class="product-img-mobile" />
+            <!-- Product-image desktop-->
+            <img
+              src="./images/desktop/image-from-above.jpg"
+              alt=""
+              class="product-img-desktop" />
+            <!-- Product-gradient -->
+            <div class="product-gradient"></div>
+            <!-- Product-text-->
+            <h3 class="product-text">Curiosity</h3>
+          </div>
+        </div>
+      </section>
+      <!-- POI:Footer -->
+      <footer
+        class="flex md:flex-row flex-col md:justify-between items-center bg-black py-24 w-full text-white text-center">
+        <!-- POI:Footer-Nav -->
+        <div class="flex flex-col justify-center items-center gap-8 px-16">
+          <img
+            src="./images/logo.svg"
+            alt="logo" />
+          <div class="flex-base font-semibold text-lg">
+            <div class="group h-10">
+              <a href="#">About</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+            <div class="group h-10">
+              <a href="#">Careers</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+            <div class="group h-10">
+              <a href="#">Events</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+            <div class="group flex h-10">
+              <a href="#">Products</a>
+              <div
+                class="mx-3 group-hover:border-white group-hover:border-b"></div>
+            </div>
+          </div>
+        </div>
+        <!-- POI:Footer-links -->
+        <div class="flex flex-col justify-center items-center gap-8 px-16">
+          <div class="flex-row flex-base">
+            <img
+              src="./images/icon-facebook.svg"
+              alt="logo" />
+            <img
+              src="./images/icon-instagram.svg"
+              alt="logo" />
+          </div>
+          <p class="font-semibold text-lg">
+            © 2022 Loopstudios. All Rights Reserved
+          </p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
