@@ -9,8 +9,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/alpine.js"
-      defer></script>
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com" />
@@ -24,9 +24,6 @@
     <link
       rel="stylesheet"
       href="../../static/css/tailwind.out.css" />
-    <script
-      src="../../static/js/main.js"
-      defer></script>
     <title>Simple Tailwind Starter</title>
   </head>
   <body>
@@ -36,15 +33,19 @@
       <header
         class="flex flex-col justify-start items-center bg-[url('../../website-projects/loopstudios/images/mobile/image-hero.jpg')] md:bg-[url('../../website-projects/loopstudios/images/desktop/image-hero.jpg')] bg-cover bg-no-repeat mb-24 px-16 pt-16 w-full h-[600px] text-white text-center">
         <!-- POI:Nav -->
-        <nav class="flex justify-between items-center gap-8 w-full">
+        <nav
+          x-data="{open:false}"
+          class="flex justify-between items-center gap-8 w-full">
           <img
             src="./images/logo.svg"
             alt="logo" />
 
           <!-- POI:Nav-Mobile menu-button -->
           <button
+            x-on:click="open = !open"
             id="hamburgerBtn"
-            class="md:hidden z-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none w-8 h-8 transition- duration-300 cursor-pointer transition: all 0.25s ease;all"
+            x-bind:class="{'open': open}"
+            class="md:hidden z-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none w-8 h-8 transition-all duration-300 ease-in-out cursor-pointer"
             aria-label="Open menu">
             <!-- three bars -->
             <div class="h-top bg-white w-6 h-0.5"></div>
@@ -54,8 +55,8 @@
 
           <!-- POI:Nav-Mobile menu-options -->
           <div
-            data-mobile-nav=""
-            class="md:hidden top-0 left-0 absolute flex flex-col justify-start items-baseline gap-4 bg-black opacity-0 pt-30 pl-16 w-full h-full font-semibold text-lg">
+            x-bind:class="open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
+            class="md:hidden top-0 left-0 absolute flex flex-col justify-start items-baseline gap-4 bg-black pt-30 pl-16 w-full h-screen font-semibold text-lg transition-opacity duration-300 ease-in-out">
             <div class="group h-10">
               <a href="#">About</a>
               <div

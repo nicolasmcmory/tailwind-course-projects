@@ -47,7 +47,3 @@ h2 {
 .open .h-bottom {
   transform: rotate(-45deg) translate(6px);
 }
-
-.show {
-  opacity: 100%;
-}
